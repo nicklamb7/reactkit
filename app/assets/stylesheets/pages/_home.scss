@@ -11,9 +11,10 @@
     font-weight: 700;
     font-size: 64px;
     font-style: normal;
-    background: linear-gradient(#F42D23, #C7221B);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: #62DAFB;
+    .logo-dark {
+      color: #282C34 !important;
+    }
   }
   .search-bar {
     background: #fff;
