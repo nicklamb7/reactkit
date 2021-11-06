@@ -1,0 +1,25 @@
+<div id="functions-show-page">
+  <p id="notice"><%= notice %></p>
+
+  <p>
+    <%= link_to "#{@function.type.name}", controller: "types", action: "show", id: @function.type %>
+  </p>
+
+  <h3>
+    <%= @function.name %>
+  </h3>
+
+  <p>
+    <%= @function.description %>
+  </p>
+
+  <p>
+    Example:
+    <%= @function.example %>
+  </p>
+
+  <% if policy(@function).edit? %>
+    <%= link_to 'Edit', edit_function_path(@function) %> |
+  <% end %>
+  <%= link_to 'Back', functions_path %>
+</div>

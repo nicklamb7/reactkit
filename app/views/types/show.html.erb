@@ -1,0 +1,19 @@
+<div id="types-show-page">
+  <p id="notice"><%= notice %></p>
+
+  <h3>
+    <%= @type.name %>
+  </h3>
+
+  <p>
+    <%= @type.description %>
+  </p>
+
+  <p>
+    <small>Added by: <%= @type.user.email.truncate(20, separator: '@') %></small>
+  </p>
+  <% if policy(@type).edit? %>
+    <%= link_to 'Edit', edit_type_path(@type) %> |
+  <% end %>
+  <%= link_to 'Back', types_path %>
+</div>

@@ -1,0 +1,23 @@
+<div id="types-index-page">
+  <div class="index-container">
+    <div>
+      <% @types.sort { |a, b| a.name <=> b.name }.each do |type| %>
+        <div>
+          <p><big><%= link_to "#{type.name}", type %></big></p>
+          <p><%= type.description.truncate(140, separator: ' ') %></p>
+          <% if policy(type).edit? %>
+            <p><%= link_to 'Edit', edit_type_path(type) %></p>
+            <p><%= link_to 'Destroy', type, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+  <br>
+
+  <% if user_signed_in? %>
+    <%= link_to 'New Type', new_type_path %>
+  <% end %>
+  <p id="notice"><%= notice %></p>
+</div>
